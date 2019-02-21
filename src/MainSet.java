@@ -35,6 +35,6 @@ public class MainSet {
         temp.clear();
         temp.addAll(pesels);
         temp.removeAll(pesels_bydgoszcz);
-        System.out.println("Po różnicy: " + pesels + " x " + pesels_bydgoszcz + " = " + temp);
+        System.out.println("Po częsci wspólnej: " + pesels + " x " + pesels_bydgoszcz + " = " + temp);
     }
 }
