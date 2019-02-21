@@ -6,7 +6,17 @@ public class MainUser {
         uc.addUser("hy", "yt");
         uc.addUser("uy", "io");
         uc.addUser("uy", "io");
+        uc.deleteUser ("mk");
+        uc.deleteUser ("sss");
+        uc.showUsers();
+
+        uc.changePassword(
+                "kk",
+                "mk",
+                "yyy",
+                "yyy");
 
         uc.showUsers();
+
     }
 }
