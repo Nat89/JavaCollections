@@ -23,8 +23,27 @@ public class Car {
     @Override
     public String toString() {
 //        System.out.printf("%10s | %10s | %15.2f | %10s", "VIN", "Marka", "Model" , "Cena podstawowa", "Wyposażenie");
-        return String.format("%10s | %10s | %10s | %10.2f | %10s", vin_no, brand, model, price_basic, equipment);
+        return String.format("%10s | %10s | %10s | %10.2f | %10s", vin_no, brand, model, price_basic, getOrderedEquipmentNames(), calcFullPrice());
+    }
+        public double calcFullPrice() {
+            double price_full = price_basic;
+            for (int i = 0; i < eq_order.size(); i++) {
+                if (eq_order.get(i) != 0) {
+                    price_full += eq_price.get(i);
+                }
+            }
+            return price_full;
+        }
+// metoda zwracajaca nazwy zamowieniowego wyposazenia dodatkowego
 
+    public String getOrderedEquipmentNames() {
+        String equipmentNames = " ";
+        for ( int i = 0; i < eq_name.size(); i ++) {
+            if(eq_order.get(i) != 0) {
+                equipmentNames += (eq_name.get(i) + ",");
+            }
+        }
+        return equipmentNames;
     }
     public String getVin_no() {
         return vin_no;
