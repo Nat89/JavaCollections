@@ -36,8 +36,13 @@ public class UserController {
     }
     public boolean passwordCheck(String newPassword) {
         // długość hasła co najmniej 6 znaków a maksymalnie 32 znaki
-        String template = ".(6,32)";
-        return Pattern.matches(template, newPassword);
+        String template = ".{6,32}";
+        // musi byc przynajmniej jedna cyfra
+        // * dowolna liczbe razy lub wcale, . dowolny znak
+        String template1 = ".*\\d+.*";
+        // musi byc przynajmniej jedna wielka litera
+        String template2 = ".*[A-Z].*";
+        return Pattern.matches(template, newPassword) && Pattern.matches(template1, newPassword) & Pattern.matches(template2,newPassword);
     }
     public boolean changePassword(String login, String oldPassword, String newPassword1, String newPassword2) {
         for (int i = 0; i < registered_users.size(); i++) {

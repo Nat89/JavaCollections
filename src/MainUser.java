@@ -13,8 +13,8 @@ public class MainUser {
         uc.changePassword(
                 "kk",
                 "mk",
-                "yyy",
-                "yyy");
+                "5Yyuuuy",
+                "5Yyuuuy");
 
         uc.showUsers();
 
