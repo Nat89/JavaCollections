@@ -23,8 +23,21 @@ public class Car {
     @Override
     public String toString() {
 //        System.out.printf("%10s | %10s | %15.2f | %10s", "VIN", "Marka", "Model" , "Cena podstawowa", "Wyposażenie");
-        return String.format("%10s | %10s | %10s | %10.2f | %10s", vin_no, brand, model, price_basic, getOrderedEquipmentNames(), calcFullPrice());
+        return String.format("%15s | %10s | %10s | %15.2f | %30s | %15f.2", vin_no, brand, model, price_basic, getOrderedEquipmentNames(), calcFullPrice());
     }
+    // metoda zamówienia dodatkowego wyposażenia
+    public void setEquipmentOrderByName(String name) {
+        int index = eq_name.indexOf(name);
+        if(eq_order.get(index) == 0) {
+            // dodawanie do wyposażenia
+            eq_order.set(index, 1);
+        } else {
+            // usuwanie wyposażenia
+            eq_order.set(index, 0);
+        }
+    }
+    // metoda zwracajaca cene z wyposazeniem
+
         public double calcFullPrice() {
             double price_full = price_basic;
             for (int i = 0; i < eq_order.size(); i++) {
@@ -35,6 +48,11 @@ public class Car {
             return price_full;
         }
 // metoda zwracajaca nazwy zamowieniowego wyposazenia dodatkowego
+//    public void setEquipmentOrderByName(String name) {
+//        int index = eq_name.indexOf(name);
+//        eq_order.set(index, 1);
+//    }
+    // metoda zwracajaca cene auta z wyposazeniem
 
     public String getOrderedEquipmentNames() {
         String equipmentNames = " ";
