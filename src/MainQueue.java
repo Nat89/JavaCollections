@@ -12,7 +12,7 @@ public class MainQueue {
         times.add(LocalTime.now());
         times.add(LocalTime.now());
         times.add(LocalTime.now());
-        times.add(LocalTime.now (12, 00, 00));
+//        times.add(LocalTime.now (12, 00, 00));
         // odczytywanie wartosci z kolejki
         System.out.println(times);
 
